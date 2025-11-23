@@ -5,8 +5,16 @@ import { TWITTER_URL, SOCIAL_HANDLE } from '../constants';
 import Logo from './Logo';
 import TypingEffect from './TypingEffect';
 
-const ComingSoon: React.FC = () => {
+interface ComingSoonProps {
+  onCTAClick: () => void;
+}
+
+const ComingSoon: React.FC<ComingSoonProps> = ({ onCTAClick }) => {
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleCTAClick = () => {
+    onCTAClick();
+  };
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-between p-6 z-10">
@@ -64,6 +72,7 @@ const ComingSoon: React.FC = () => {
             href={TWITTER_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleCTAClick}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             className="relative glass-panel px-8 py-4 rounded-lg flex items-center gap-4 hover:bg-white/5 transition-all duration-300"
