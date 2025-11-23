@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Logo: React.FC<{ className?: string }> = ({ className = "" }) => {
   return (
-    <div className={`flex items-center gap-3 brand-font font-bold tracking-tighter select-none ${className}`}>
+    <Link to="/" className={`flex items-center select-none ${className}`}>
       <img 
         src="/hio.svg" 
-        alt="HIO" 
-        className="h-8 w-auto"
+        alt="hio.space" 
+        className="h-8 w-auto hover:opacity-80 transition-opacity"
       />
-      <span className="text-2xl text-white lowercase">hio<span className="text-gray-500">.space</span></span>
-    </div>
+    </Link>
   );
 };
 
