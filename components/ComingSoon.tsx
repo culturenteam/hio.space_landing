@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Twitter, ArrowRight, Loader2 } from 'lucide-react';
 import { TWITTER_URL, SOCIAL_HANDLE } from '../constants';
 import Logo from './Logo';
@@ -96,11 +97,11 @@ const ComingSoon: React.FC = () => {
 
       {/* Footer */}
       <footer className="w-full max-w-6xl py-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-        <p>&copy; {new Date().getFullYear()} HIO.space. All systems nominal.</p>
+        <p>&copy; {new Date().getFullYear()} hio.space. All systems nominal.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
-          <span className="hover:text-gray-400 cursor-pointer transition-colors">Manifesto</span>
-          <span className="hover:text-gray-400 cursor-pointer transition-colors">Privacy</span>
-          <span className="hover:text-gray-400 cursor-pointer transition-colors">Contact</span>
+          <Link to="/privacy" className="hover:text-gray-400 cursor-pointer transition-colors">Manifesto</Link>
+          <Link to="/privacy" className="hover:text-gray-400 cursor-pointer transition-colors">Privacy</Link>
+          <Link to="/contact" className="hover:text-gray-400 cursor-pointer transition-colors">Contact</Link>
         </div>
       </footer>
     </div>
